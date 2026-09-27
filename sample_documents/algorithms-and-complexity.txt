@@ -1,0 +1,7 @@
+Algorithms and Complexity
+
+The study of algorithms is fundamentally about solving problems efficiently, and complexity analysis gives us a language for comparing solutions independent of hardware: Big-O notation describes how an algorithm's running time or space requirements grow as input size increases.
+
+Sorting algorithms are a classic case study. Comparison-based sorts like merge sort and quicksort achieve O(n log n) average-case complexity, which is provably optimal for comparison sorts, while simpler algorithms like bubble sort and insertion sort run in O(n^2) but can be faster in practice on small or nearly-sorted inputs.
+
+Graph traversal algorithms, such as breadth-first search and depth-first search, are the basis for solving many real-world problems: finding shortest paths, detecting cycles, and determining connectivity. Breadth-first search explores neighbors level by level using a queue, while depth-first search explores as far as possible along each branch using a stack (or recursion) before backtracking.

@@ -1,0 +1,7 @@
+Memory Management in Linux
+
+Linux uses a sophisticated virtual memory management subsystem to allocate and track memory for processes. The kernel divides memory into pages, typically 4KB in size on x86 systems, and manages them through a hierarchy of page tables.
+
+The Linux memory manager is responsible for allocating physical memory to processes on demand, a strategy known as demand paging: pages are not loaded until they are actually accessed. This reduces startup time and memory pressure. When physical memory runs low, the kernel's page reclaim algorithm selects pages to evict, using an approximation of least-recently-used to decide which pages are least likely to be needed soon.
+
+Linux also supports swapping, where inactive pages are written out to a swap partition or swap file on disk, freeing physical RAM for active processes. Combined with the buddy allocator for physical page allocation and the slab allocator for kernel object caching, Linux memory management balances performance, fairness, and the illusion of near-unlimited memory for each running process.

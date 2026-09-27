@@ -1,0 +1,7 @@
+Data Structures: Trees and Hash Tables
+
+A tree is a hierarchical data structure consisting of nodes connected by edges, with a single root node and no cycles. Binary search trees maintain the invariant that, for every node, all values in the left subtree are smaller and all values in the right subtree are larger, enabling search, insertion, and deletion in O(log n) time on average for balanced trees.
+
+Self-balancing variants like AVL trees and red-black trees guarantee logarithmic height even in the worst case by performing rotations after insertions and deletions that would otherwise skew the tree.
+
+A hash table stores key-value pairs and uses a hash function to compute an index into an array of buckets. Collision resolution is necessary because different keys can hash to the same bucket; common strategies include chaining, where each bucket holds a linked list of entries, and open addressing, where a collision triggers a probe to find the next free slot.

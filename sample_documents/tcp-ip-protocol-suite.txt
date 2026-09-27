@@ -1,0 +1,7 @@
+TCP/IP Protocol Suite
+
+TCP/IP is the foundational protocol suite of the internet, combining the Transmission Control Protocol (TCP) and the Internet Protocol (IP). The IP protocol handles addressing and routing, ensuring packets find their way from a source host to a destination host across interconnected networks.
+
+TCP sits above IP and provides a reliable, ordered, and error-checked stream of data between applications. It establishes a connection using a three-way handshake, then manages flow control and congestion control to avoid overwhelming the network or the receiver. If a packet is lost, TCP detects this through missing acknowledgments and retransmits it.
+
+The TCP/IP suite is organized as a four-layer model: link, internet, transport, and application, a simplification of the seven-layer OSI model that maps closely to how the modern internet is actually implemented in practice.

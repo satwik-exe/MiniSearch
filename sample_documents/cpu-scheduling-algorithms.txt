@@ -1,0 +1,7 @@
+CPU Scheduling Algorithms
+
+CPU scheduling is the basis of multiprogrammed operating systems. By switching the CPU among processes, the operating system can make the computer more productive.
+
+Round Robin scheduling assigns each process a fixed time quantum and cycles through the ready queue, preempting a process once its quantum expires. It is designed for time-sharing systems and guarantees reasonable response time, though the choice of quantum size significantly affects performance: too small and overhead from context switching dominates, too large and it degrades into First-Come-First-Served behavior.
+
+Other common algorithms include Shortest-Job-First, which minimizes average waiting time but requires knowing (or estimating) burst length in advance, and Priority Scheduling, where each process is assigned a priority and the CPU is allocated to the highest-priority ready process, with aging techniques used to prevent starvation of low-priority processes.

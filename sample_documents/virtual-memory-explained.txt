@@ -1,0 +1,7 @@
+Virtual Memory Explained
+
+Virtual memory is a memory management technique that provides an idealized abstraction of the storage resources available on a machine. It creates the illusion of a very large main memory for the programmer, even when the physical memory (RAM) is much smaller. Virtual memory allows the operating system to use secondary storage, such as a hard disk, as an extension of physical memory.
+
+The core mechanism is paging: the operating system divides virtual address space into fixed-size pages, and physical memory into frames of the same size. Pages are mapped to frames through a page table maintained per process. When a process accesses a page that is not currently in physical memory, a page fault occurs and the operating system loads the required page from disk, potentially evicting another page to make room.
+
+Virtual memory also provides memory protection, since each process operates in its own virtual address space and cannot directly access another process's memory. This isolation is fundamental to modern multitasking operating systems and is what allows dozens of programs to run "simultaneously" on a machine with limited physical RAM without corrupting each other's data.

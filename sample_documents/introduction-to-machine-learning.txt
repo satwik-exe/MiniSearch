@@ -1,0 +1,7 @@
+Introduction to Machine Learning
+
+Machine learning is a field of study that gives computers the ability to learn patterns from data without being explicitly programmed for every rule. At its core, most machine learning algorithms work by minimizing a loss function that measures how far the model's predictions are from the true values.
+
+Neural networks are a family of models loosely inspired by biological neurons, composed of layers of interconnected units, each applying a weighted sum followed by a nonlinear activation function. Training a neural network typically uses gradient descent, an iterative optimization algorithm that adjusts the network's weights in the direction that most reduces the loss, computed efficiently across many layers using backpropagation.
+
+Choosing the learning rate for gradient descent is critical: too high and training can diverge or oscillate, too small and training becomes impractically slow. Variants like stochastic gradient descent, and adaptive methods such as Adam, are widely used to make training more stable and efficient on large datasets.

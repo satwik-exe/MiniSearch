@@ -1,0 +1,9 @@
+Operating Systems Notes
+
+This document covers three core operating system topics: process scheduling, memory management, and file systems.
+
+Process scheduling determines which of the ready processes gets to run on the CPU next. Common scheduling algorithms include First-Come-First-Served, Shortest-Job-First, Priority Scheduling, and Round Robin. The scheduler must balance throughput, latency, and fairness, and modern operating systems typically use multilevel feedback queues that adapt process priority based on observed behavior.
+
+Process synchronization becomes necessary whenever multiple processes or threads share resources. Without proper synchronization, race conditions can corrupt shared data. Classic tools include mutexes, semaphores, and monitors. A particularly dangerous failure mode is deadlock, where a set of processes are each waiting for a resource held by another process in the set, so none of them can proceed. Deadlock prevention, avoidance, and detection are major topics in OS design.
+
+File systems organize how data is stored and retrieved from persistent storage, using structures like inodes, directories, and free-space bitmaps to track which blocks belong to which files.

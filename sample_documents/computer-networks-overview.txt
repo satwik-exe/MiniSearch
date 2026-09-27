@@ -1,0 +1,7 @@
+Computer Networks Overview
+
+A computer network is a set of computers sharing resources located on or provided by network nodes. Networks are typically organized in layers to manage complexity, most famously described by the OSI model: physical, data link, network, transport, session, presentation, and application layers.
+
+The physical layer deals with the actual transmission of raw bits over a communication channel. The data link layer handles node-to-node data transfer and error detection. The network layer handles routing of packets across multiple networks. The transport layer, home to protocols like TCP and UDP, provides end-to-end communication services, with TCP offering reliable, ordered delivery and UDP offering a lightweight, connectionless alternative.
+
+Understanding these layers helps engineers reason about where a given network problem originates, whether it's a cabling issue at the physical layer or a misconfigured routing table at the network layer.

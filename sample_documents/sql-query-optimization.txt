@@ -1,0 +1,7 @@
+SQL Query Optimization
+
+The performance of SQL queries depends heavily on how the underlying database engine executes them. A query optimizer analyzes a SQL statement and chooses an execution plan, deciding, for instance, which index to use, the order in which to join tables, and whether to perform a full table scan.
+
+Writing efficient SQL often starts with proper indexing: columns frequently used in WHERE clauses or JOIN conditions are strong candidates for indexing. However, over-indexing can hurt write performance, since every insert or update must also update each index.
+
+Joins are a common source of slow queries. Understanding the difference between nested loop joins, hash joins, and sort-merge joins helps explain why the same logical query can execute at very different speeds depending on data volume, and why the optimizer's chosen join order matters so much for overall query performance.

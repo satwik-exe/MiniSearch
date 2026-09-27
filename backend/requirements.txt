@@ -1,0 +1,55 @@
+# Pinned to versions that ship prebuilt wheels for Python 3.14 (no Rust
+# toolchain or Visual Studio Build Tools needed to install on Windows).
+# See PYTHON_3_14_NOTES.md for exactly what was verified vs. what could not
+# be executed in the environment these changes were made in.
+#
+# Floors below are the first release of each package to add Python 3.14
+# support (confirmed against each project's own release notes):
+#   - starlette 0.48.0  (2025-09-13) -- first release supporting 3.14
+#   - pydantic  2.12.0  (2025-10-07) -- first release with cp314 pydantic-core wheels
+#   - fastapi   0.118.3 (2025-10-10) -- first release supporting 3.14
+# fastapi pulls in a compatible starlette/pydantic itself, so those two are
+# not pinned directly here -- only fastapi's own floor is set, high enough
+# that pip's resolver is forced to pick a starlette/pydantic new enough for
+# Python 3.14. An upper bound is kept under fastapi's next major version so a
+# future breaking release doesn't silently get pulled in.
+fastapi>=0.118.3,<1.0.0
+
+# IMPORTANT -- deliberately NOT uvicorn[standard]. The "standard" extra pulls
+# in httptools (a C extension) and uvloop. uvloop already excludes Windows via
+# its own dependency markers, but httptools does not, and historically lags
+# behind new CPython releases in publishing prebuilt wheels (see e.g.
+# https://github.com/encode/uvicorn/discussions/2413, where a missing cp313
+# httptools wheel forced a from-source build requiring the MSVC toolchain on
+# Windows -- precisely the failure mode being avoided here). This app doesn't
+# use WebSockets and isn't performance-critical (it's a local/portfolio
+# project), so plain uvicorn (pure-Python h11 + click, no C extensions at
+# all) is the safer choice on Windows: it installs from a wheel regardless of
+# whether httptools/uvloop have caught up to the current Python version yet.
+# If you specifically want the standard extras' performance and have
+# confirmed httptools has a cp314 Windows wheel available, you can switch to
+# uvicorn[standard] yourself.
+uvicorn>=0.34.0,<1.0.0
+
+# Pure Python, no C extension -- version floor is just "recent enough to be
+# actively maintained", not a 3.14-specific requirement.
+python-multipart>=0.0.9
+
+# Pure Python (no C extension); Fedora's build already rebuilt this package
+# for Python 3.14 release candidates in 2025 with no source changes needed.
+pypdf>=5.9.0
+
+# See the fastapi comment above -- 2.12.0 is pydantic's own first release
+# with cp314 pydantic-core wheels. Floors below that (e.g. the project's
+# previous pin of 2.9.2) fail to install on Python 3.14: pip falls back to
+# building pydantic-core from source, which needs a Rust toolchain that isn't
+# present by default on Windows.
+pydantic>=2.12.0,<3.0.0
+
+pytest>=8.3.3
+httpx>=0.27.2
+
+# Test-only: generates a real PDF in tests/test_ingestion.py's PDF-parsing
+# tests. Pure Python plus a couple of small pure-Python dependencies (no C
+# extension), so it carries no Windows/3.14 build-tool risk of its own.
+reportlab>=4.0.0

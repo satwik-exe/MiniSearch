@@ -1,0 +1,20 @@
+{
+  "description": "Hand-labeled evaluation queries for MiniSearch, run against the sample_documents corpus. relevant_titles are matched against document titles after ingestion (see evaluate.py).",
+  "queries": [
+    {"query": "virtual memory management", "relevant_titles": ["Virtual Memory Explained", "Memory Management In Linux"]},
+    {"query": "operating system scheduling", "relevant_titles": ["Operating Systems Notes", "Cpu Scheduling Algorithms"]},
+    {"query": "database indexing", "relevant_titles": ["Database Indexing Techniques", "Sql Query Optimization"]},
+    {"query": "tcp ip networking protocol", "relevant_titles": ["Computer Networks Overview", "Tcp Ip Protocol Suite"]},
+    {"query": "binary search tree", "relevant_titles": ["Data Structures Trees", "Algorithms And Complexity"]},
+    {"query": "graph traversal algorithms", "relevant_titles": ["Algorithms And Complexity", "Data Structures Trees"]},
+    {"query": "process synchronization deadlock", "relevant_titles": ["Operating Systems Notes"]},
+    {"query": "sql joins queries", "relevant_titles": ["Sql Query Optimization", "Database Indexing Techniques"]},
+    {"query": "machine learning neural networks", "relevant_titles": ["Introduction To Machine Learning"]},
+    {"query": "hash table collision resolution", "relevant_titles": ["Data Structures Trees"]},
+    {"query": "cpu scheduling round robin", "relevant_titles": ["Cpu Scheduling Algorithms", "Operating Systems Notes"]},
+    {"query": "network layers osi model", "relevant_titles": ["Computer Networks Overview", "Tcp Ip Protocol Suite"]},
+    {"query": "sorting algorithm complexity", "relevant_titles": ["Algorithms And Complexity"]},
+    {"query": "recipe cooking bread", "relevant_titles": ["How To Bake Bread"]},
+    {"query": "gradient descent optimization", "relevant_titles": ["Introduction To Machine Learning"]}
+  ]
+}

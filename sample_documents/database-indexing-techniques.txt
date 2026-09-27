@@ -1,0 +1,7 @@
+Database Indexing Techniques
+
+An index is a data structure that improves the speed of data retrieval operations on a database table, at the cost of additional writes and storage space to maintain the index structure.
+
+The most common index structure is the B-tree (or its variant, the B+-tree), which keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. Database indexing dramatically reduces the number of disk pages that must be read to satisfy a query: without an index, the database must perform a full table scan, examining every row.
+
+Hash indexes are another option, providing average O(1) lookup for equality queries but no support for range queries, since hashing destroys the ordering of keys. Choosing the right index for a given database workload requires understanding query patterns: composite indexes, covering indexes, and partial indexes are all techniques for tailoring index structures to specific access patterns.
